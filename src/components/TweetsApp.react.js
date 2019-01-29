@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+
 import Tweets from "./Tweets.react.js";
 import Loader from "./Loader.react.js";
 import NotificationBar from "./NotificationBar.react.js";
 
 class TweetsApp extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			tweets: [],
+		};
+	}
 	addTweet(tweet) {
 		// Get current application state
 		var updated = this.state.tweets;
@@ -142,7 +149,7 @@ class TweetsApp extends Component {
 	}
 
 	// Render the component
-	render() {
+	render(props) {
 		return (
 			<div className='tweets-app'>
 				<Tweets tweets={this.state.tweets} />

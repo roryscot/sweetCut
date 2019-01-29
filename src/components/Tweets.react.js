@@ -3,9 +3,9 @@
 import React from "react";
 import Tweet from "./Tweet.react.js";
 
-const Tweets = () => {
+const Tweets = props => {
 	// Build list items of single tweet components using map
-	var content = this.props.tweets.map(function(tweet) {
+	var content = props.tweets.map(function(tweet) {
 		return <Tweet key={tweet._id} tweet={tweet} />;
 	});
 

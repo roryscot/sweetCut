@@ -15,8 +15,8 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 // Set handlebars as the templating engine
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
 // Disable etag headers on responses
 app.disable("etag");
@@ -34,7 +34,7 @@ app.get("/", routes.index);
 app.get("/page/:page/:skip", routes.page);
 
 // Set /public as our static content dir
-app.use("/", express.static(__dirname + "/build/"));
+app.use("/", express.static(__dirname + "/public/"));
 
 // Start server
 var server = http.createServer(app).listen(port, function() {
