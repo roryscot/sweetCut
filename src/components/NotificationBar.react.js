@@ -2,8 +2,8 @@
 
 import React from "react";
 
-const NotificationBar = () => {
-	var count = this.props.count;
+const NotificationBar = props => {
+	var count = props.count;
 	return (
 		<div className={"notification-bar" + (count > 0 ? " active" : "")}>
 			<p>

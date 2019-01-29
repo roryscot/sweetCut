@@ -14,7 +14,7 @@ module.exports = {
 		// Call static model method to get tweets in the db
 		Tweet.getTweets(0, 0, function(tweets, pages) {
 			// Render React to a string, passing in our fetched tweets
-			var markup = renderToString(<TweetsApp />);
+			var markup = renderToString(<TweetsApp tweets={tweets} />);
 
 			// Render our 'home' template
 			// res.render("home", {
